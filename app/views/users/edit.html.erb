@@ -1,0 +1,10 @@
+<h1>Editing user</h1>
+
+<%= render "form", user: @user %>
+
+<br>
+
+<div class="paddingLeft">
+  <%= link_to " Show this user", @user, class:"btn btn-info bi bi-eye"%>
+  <%= link_to "Back to users", users_path, class:"btn btn-secondary" %>
+</div>

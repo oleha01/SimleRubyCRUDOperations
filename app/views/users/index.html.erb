@@ -1,0 +1,50 @@
+
+
+<h1>Users</h1>
+
+
+<%= link_to " New user", new_user_path , class:"btn btn-outline-success bi bi-person-plus"%>
+
+<div id="users">
+<p></p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>E-mail</th>
+      <th>Phone</th>
+      <th>Telegram</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% @users.each do |user| %>
+     <tr id="<%= dom_id user %>">
+
+    <td class="align-middle"><%= user.first_name %></td>
+
+    <td class="align-middle"><%= user.last_name %></td>
+
+    <td class="align-middle"><%= user.email %></td>
+
+    <td class="align-middle"><%= user.phone %></td>
+
+    <td class="align-middle"><%= user.telegram %></td>
+
+    <td class="align-middle" style="float: left; width: 100%;">
+    <%= link_to " View", user , class:"btn btn-primary bi bi-eye"%>
+    <%= link_to " Edit", edit_user_path(user), class:"btn btn-secondary bi bi-pen"%>
+    <%#<%= link_to " Delete", destroy_user_path(user) , class:"btn btn-danger bi bi-trash"%>
+    <%= button_to "Delete", user, method: :delete, class:"btn btn-danger bi bi-trash", form_class:"deleteForm" %>
+    </td>
+    </p>
+</tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+  
+</div>

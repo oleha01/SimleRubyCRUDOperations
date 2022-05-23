@@ -1,0 +1,9 @@
+
+<%= render @user%>
+<div>
+  <%= link_to " Edit this user", edit_user_path(@user), class:"btn btn-secondary bi bi-pen" %>
+  <br/>
+  <br/>
+  <%= link_to "Back to users", users_path, class:"btn btn-secondary" %>
+  <%= button_to " Destroy this user", @user, method: :delete, class:"btn btn-danger bi bi-trash", form_class:"deleteForm" %>
+</div>
